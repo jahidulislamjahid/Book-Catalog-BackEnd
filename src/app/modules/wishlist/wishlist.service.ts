@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-unused-vars */
-import { IWishList } from './wishList.interface';
-import { WishList } from './wishList.model';
+import { IWishList } from './wishlist.interface';
+import { WishList } from './wishlist.model';
 
 const createWishList = async (payload: IWishList) => {
   const email = payload.email;

@@ -7,7 +7,7 @@ import pick from '../../../shared/pick';
 import sendReponse from '../../../shared/sendResponse';
 import { bookFilterableFields } from './books.constant';
 import { IBook } from './books.interface';
-import { BookService } from './books.services';
+import { BookService } from './books.service';
 
 const sendBookResponse = (res: Response, message: string, data: any) => {
   sendReponse<IBook>(res, {

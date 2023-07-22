@@ -4,7 +4,7 @@ import { Secret } from 'jsonwebtoken';
 
 import { StatusCodes } from 'http-status-codes';
 import config from '../../config';
-import { ApiError } from '../../handlingError/ApiError';
+import { ApiError } from '../../handlingError/apiError';
 import { jwtHelpers } from '../../helpers/jwtHelpers';
 
 const auth =

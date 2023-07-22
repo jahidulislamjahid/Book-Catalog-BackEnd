@@ -4,7 +4,7 @@ import bcrypt from 'bcrypt';
 import { StatusCodes } from 'http-status-codes';
 import { JwtPayload, Secret } from 'jsonwebtoken';
 import config from '../../../config';
-import { ApiError } from '../../../handlingError/ApiError';
+import { ApiError } from '../../../handlingError/apiError';
 import { jwtHelpers } from '../../../helpers/jwtHelpers';
 
 import { User } from '../user/user.model';
@@ -35,7 +35,6 @@ const loginStudent = async (
     throw new ApiError(StatusCodes.UNAUTHORIZED, 'Password is incorrect');
   }
 
-  // Generate an access token
   const accessToken = jwtHelpers.createToken(
     { email, userDetails },
     config.jwt.secret as Secret,
@@ -47,7 +46,6 @@ const loginStudent = async (
     config.jwt.refresh_expires_in as string
   );
 
-  // Return the response object
   return {
     email,
     userDetails,
@@ -68,7 +66,6 @@ const refreshToken = async (token: string): Promise<IRefreshTokenResponse> => {
   }
   const { email } = verifiedToken;
 
-  // Check if the user is an Admin, Instructor, or Student
   const user = await User.findOne({ email });
 
   if (!user) {
@@ -97,21 +94,25 @@ const changePassword = async (
   if (!isUserExist) {
     throw new ApiError(StatusCodes.NOT_FOUND, 'User does not exist');
   }
-  // Checking OLD password
+
+
   if (
     isUserExist.password &&
     !(await User.isPasswordMatched(oldPassword, isUserExist.password))
   ) {
     throw new ApiError(StatusCodes.UNAUTHORIZED, 'Old Password is incorrect');
   }
-  // Hash password
+
+
   const newHashPass = await bcrypt.hash(
     newPassword,
     Number(config.default_salt_rounds as string)
   );
+
   const updatedData = {
     password: newHashPass,
   };
+
   const query = { email: user?.email };
   await User.findOneAndUpdate(query, updatedData);
 };

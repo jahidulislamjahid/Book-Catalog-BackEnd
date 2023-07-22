@@ -47,7 +47,6 @@ UserSchema.statics.isUserExist = async function(
   return await User.findOne({ email }, { email: 1, password: 1, role: 1 });
 };
 
-//password Matching
 
 UserSchema.statics.isPasswordMatched = async function(
   givenPassword: string,
@@ -56,7 +55,6 @@ UserSchema.statics.isPasswordMatched = async function(
   return await bcrypt.compare(givenPassword, savedPassword);
 };
 
-// hashing user password
 UserSchema.pre('save', async function(next) {
   const User = this;
   User.password = await bcrypt.hash(

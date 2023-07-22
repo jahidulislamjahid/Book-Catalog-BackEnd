@@ -2,7 +2,7 @@
 /* eslint-disable no-console */
 import { ErrorRequestHandler } from 'express';
 import config from '../../config';
-import { ApiError } from '../../handlingError/ApiError';
+import { ApiError } from '../../handlingError/apiError';
 import handleValidationError from '../../handlingError/handleValidationError';
 
 import { ZodError } from 'zod';

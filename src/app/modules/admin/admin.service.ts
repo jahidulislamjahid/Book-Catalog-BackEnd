@@ -5,18 +5,20 @@ import { IAdmin } from './admin.interface';
 import { Admin } from './admin.model';
 import { generateAdminId } from './admin.util';
 
-//getAllAdmin Service Section
+
+
+
 const getAllAdmins = async () => {
   const result = await Admin.find({});
   return result;
 };
 
-//getSingleAdmin Service Section
 const getSingleAdmin = async (id: string) => {
   const result = await Admin.findById(id);
   return result;
 };
-//updateAdmin Service Section
+
+
 const updateAdmin = async (id: string, payload: Partial<IAdmin>) => {
   const result = await Admin.findByIdAndUpdate({ _id: id }, payload, {
     new: true,
@@ -24,13 +26,14 @@ const updateAdmin = async (id: string, payload: Partial<IAdmin>) => {
 
   return result;
 };
-//deleteAdmin Service Section
+
+
+
 const deleteAdmin = async (id: string) => {
   const result = await Admin.findByIdAndDelete(id);
   return result;
 };
 
-///create admin
 
 const createAdmin = async (admin: IAdmin) => {
   if (!admin.password) {

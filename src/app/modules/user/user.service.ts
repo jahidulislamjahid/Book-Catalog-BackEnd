@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 import { StatusCodes } from 'http-status-codes';
 import config from '../../../config';
-import { ApiError } from '../../../handlingError/ApiError';
+import { ApiError } from '../../../handlingError/apiError';
 import { generateUserId } from '../../../helpers/generateId';
 import { IUser } from './user.interface';
 import { User } from './user.model';

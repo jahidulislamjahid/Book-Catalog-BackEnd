@@ -1,7 +1,7 @@
-import { Schema, model } from 'mongoose';
-import config from '../../../config';
-import { AdminModel, IAdmin } from './admin.interface';
 /* eslint-disable @typescript-eslint/no-this-alias */
+import config from '../../../config';
+import { Schema, model } from 'mongoose';
+import { AdminModel, IAdmin } from './admin.interface';
 import bcrypt from 'bcrypt';
 
 export const AdminSchema = new Schema<IAdmin, AdminModel>(

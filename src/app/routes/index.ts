@@ -2,7 +2,7 @@ import express from 'express';
 import { BookRoutes } from '../modules/book/books.routes';
 import { UserRoutes } from '../modules/user/user.route';
 import { AuthRoutes } from '../modules/auth/auth.route';
-import { WishListRoutes } from '../modules/wishlist/wishList.routes';
+import { WishListRoutes } from '../modules/wishlist/wishlist.route';
 
 const router = express.Router();
 

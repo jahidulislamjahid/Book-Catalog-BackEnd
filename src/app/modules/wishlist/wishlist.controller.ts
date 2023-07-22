@@ -2,8 +2,8 @@ import { Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import catchAsync from '../../../shared/catchAsync';
 import sendReponse from '../../../shared/sendResponse';
-import { IWishList } from './wishList.interface';
-import { WishListService } from './wishList.services';
+import { IWishList } from './wishlist.interface';
+import { WishListService } from './wishlist.service';
 
 const sendWishListResponse = (res: Response, message: string, data: any) => {
   sendReponse<IWishList>(res, {

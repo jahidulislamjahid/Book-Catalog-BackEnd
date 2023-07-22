@@ -1,5 +1,5 @@
 import { Schema, model } from 'mongoose';
-import { ApiError } from '../../../handlingError/ApiError';
+import { ApiError } from '../../../handlingError/apiError';
 import { BookModel, IBook } from './books.interface';
 
 const bookSchema = new Schema<IBook>(
@@ -27,7 +27,6 @@ const bookSchema = new Schema<IBook>(
     },
     year: {
       type: String,
-      // required: true,
     },
     publicationDate: {
       type: String,
