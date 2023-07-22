@@ -13,11 +13,11 @@ const createBook = async (payload: IBook): Promise<IBook> => {
   const bookId = await generateBookId();
   //const BookPayload: IBook = { ...payload, id: BookId };
   const images = [
-    'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1616514130l/55145261.jpg',
-    'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1601937850l/54814676.jpg',
-    'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1618913179l/54985743.jpg',
-    'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1602570691l/53138095.jpg',
-    'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1628625865l/58745185._SY475_.jpg',
+    'https://ds.rokomari.store/rokomari110/ProductNew20190903/130X186/1971__Bharoter_Bangladesh_Juddha-Mohiuddin_Ahmmod-fca8d-286382.jpg',
+    'https://ds.rokomari.store/rokomari110/ProductNew20190903/130X186/Basic_Ali_15-Shahorier-133f2-278952.jpg',
+    'https://ds.rokomari.store/rokomari110/ProductNew20190903/130X186/_Primary_o_Shikkhok_Nibondon_Specail_Mag-Mottasin_Pahlovi-a749a-273767.jpg',
+    'https://ds.rokomari.store/rokomari110/ProductNew20190903/130X186/Amar_Swapno_Amar_Desh-MIrza_Faqrul_Islam_Alomgir_-ee206-269942.jpeg',
+    'https://ds.rokomari.store/rokomari110/ProductNew20190903/130X186/Binodoner_Bar_b_q-Rakib_Hasan-63dd5-254847.jpg',
   ];
 
   const randomIndex = Math.floor(Math.random() * images.length);

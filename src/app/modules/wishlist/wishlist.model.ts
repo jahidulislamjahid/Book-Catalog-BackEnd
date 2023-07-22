@@ -1,5 +1,5 @@
 import { Schema, model } from 'mongoose';
-import { IWishList, WishModel } from './wishList.interface';
+import { IWishList, WishModel } from './wishlist.interface';
 
 const wishListSchema = new Schema<IWishList>(
   {
